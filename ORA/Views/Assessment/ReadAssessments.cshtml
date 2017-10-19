@@ -7,6 +7,9 @@
 
 <h2>ReadAssessments</h2>
 
+<span>Date: </span>
+<input name="daterange" type="datetime" />
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -113,5 +116,8 @@
         }
     </tr>
 </table>
-    }
+    
+<script type="text/javascript">
+    $('input[name="daterange"]').daterangepicker();
+</script>
 
