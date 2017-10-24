@@ -82,13 +82,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input onclick="confirmdelete()" type="submit" value="Delete" class="btn btn-default" /> |
+            <input onclick="return confirm('Are you sure you want to delete this employee');" type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
-    <script>
-        function confirmdelete() {
-            confirm("Are you sure you want to delete this employee");
-        }
-    </script>
 </div>

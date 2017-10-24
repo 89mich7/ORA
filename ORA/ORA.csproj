@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -194,6 +195,13 @@
     <Compile Include="Tools\Mapping.cs" />
     <Compile Include="Tools\Salt.cs" />
     <Compile Include="Tools\SessionTool.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\animate.min.css" />
@@ -342,6 +350,7 @@
     <Content Include="Content\WizardAssets\scss\gsdk-bootstrap-wizard\_typography.scss" />
     <Content Include="Content\WizardAssets\scss\gsdk-bootstrap-wizard\_variables.scss" />
     <Content Include="Content\WizardAssets\scss\gsdk-bootstrap-wizard\_wizard-card.scss" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

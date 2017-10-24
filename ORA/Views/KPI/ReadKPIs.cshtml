@@ -17,73 +17,75 @@
 <span>From: </span>
 <input id="dateto" name="daterange" type="datetime" />
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Points)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TCCreated)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TCExecuted)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TCFailed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TCPassed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TCBlocked)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DefectsFound)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DefectsFixed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DefectsAccepted)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DefectsRejected)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DefectsDeferred)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CriticalDefects)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TestHrsPlanned)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TestHrsActual)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BugsFoundProduction)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalHrsFixingBugs)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AssignmentId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SprintId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StoryId)
-        </th>
-        <th></th>
-    </tr>
+<table class="table" id="mytable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Points)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TCCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TCExecuted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TCFailed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TCPassed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TCBlocked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefectsFound)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefectsFixed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefectsAccepted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefectsRejected)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefectsDeferred)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CriticalDefects)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestHrsPlanned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestHrsActual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BugsFoundProduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalHrsFixingBugs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignmentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SprintId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoryId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
     @foreach (var item in Model) {
     <tr>
@@ -170,8 +172,9 @@
             showDropdowns: true
         });
 </script>
+
 <script type="text/javascript">
-    $(function () {
-         oTable = $('datatable').
+    $(document).ready(function () {
+        $('#mytable').DataTable();
     });
 </script>

@@ -31,7 +31,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-color="green" data-image="assets/img/sidebar-5.jpg">
+        <div class="sidebar" data-color="azure" data-image="assets/img/sidebar-5.jpg">
             <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 
             <div class="sidebar-wrapper">
@@ -57,6 +57,7 @@
                         </a>
                     </li>
                 </ul>
+                <div id="divRss"></div>
             </div>
         </div>
         <div class="main-panel">
@@ -71,11 +72,11 @@
                         </button>
                         @if ((string)Session["Role"] == "MANAGER")
                         {
-                            <a class="navbar-brand" href="#">MANAGER DASHBOARD</a>
+                        <a class="navbar-brand" href="#">MANAGER DASHBOARD</a>
                         }
                         @if ((string)Session["Role"] == "TEAMLEAD")
                         {
-                            <a class="navbar-brand" href="#">TEAM LEAD DASHBOARD</a>
+                        <a class="navbar-brand" href="#">TEAM LEAD DASHBOARD</a>
                         }
                         <a class="navbar-brand" href="#">Profile</a>
 
@@ -279,7 +280,13 @@
 <script src="~/Content/assets/js/light-bootstrap-dashboard.js"></script>
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="~/Content/assets/js/demo.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="FeedEk.js"></script>
+<script>
+    $('#divRss').FeedEk({
+        FeedUrl: 'http://jquery-plugins.net/rss'
+    });
+</script>
 
 @*<h2>ReadAccount</h2>
 

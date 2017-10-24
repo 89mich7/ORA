@@ -35,7 +35,7 @@ namespace ORA.Controllers
                 //LoginDAL.Register(Mapper.Map<LoginDM>(info));
                 info.Password = "";
                 return ConfigurationManager.AppSettings["RegisterToLogin"].ToLower() == "true"
-                    ? RedirectToAction("Login", "Login", info) : RedirectToAction("Home", "Index", new { area = "Default" });
+                    ? RedirectToAction("Login", "Login", info) : RedirectToAction("Index", "Home", new { area = "Default" });
 
             }
             catch (Exception ex)
